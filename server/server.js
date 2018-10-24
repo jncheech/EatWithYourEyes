@@ -1,11 +1,14 @@
 require('dotenv').config();
 
 const express = require('express');
+const path = require('path');
 
 const { YelpSearch } = require('./yelp-search');
 
 const port = process.env.PORT || 5000;
 var app = express();  
+
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.get('/search/:page', (req, res) => {
     
@@ -35,6 +38,10 @@ app.get('/search/:page', (req, res) => {
         })
     });
     
+});
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
 app.listen(port, () => {
