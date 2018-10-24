@@ -1,0 +1,19 @@
+{
+  "name": "what-to-eat-app",
+  "version": "1.0.0",
+  "description": "An app to discover places to eat by viewing pictures from Yelp's Fusion API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js && cd client && npm start"
+  },
+  "author": "Jonathan Chichioco",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "create-react-app": "^2.0.4",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "memory-cache": "^0.2.0"
+  }
+}

@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300i,400i');
+a{
+  color:inherit;
+}
+
+.App{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  height:100%;
+ 
+  font-family: 'Lato', sans-serif;
+}
+h1{
+  font-style:italic;
+  display:block;
+  margin:20px auto;
+  top:-40px;
+  position:relative;
+}
+.search-bar{
+  display:block;
+  margin:0 auto;
+  width:80%;
+}
+input {
+  width:100%;
+  height:50px;
+  box-sizing:border-box;
+  font-size:16px;
+  margin: 20px auto;
+  border:1px solid #ccc;
+  padding:5px;
+  color:#222
+}
+input:focus{
+  outline-width: 0;
+}
+
+.image-list{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items:center;
+}
+
+.image-post {
+  width:400px;
+  height:250px;
+  display:block;
+  overflow:hidden;
+  align-self:flex-start;
+  margin:2px;
+  position:relative;
+}
+
+.image-caption{
+  width:100%;
+  height:100%;
+  display:none;
+  position:absolute;
+  bottom: 0;
+  left:0;
+  background: rgba(0,0,0,0.3);
+  color:#fff;
+  font-weight:bold;
+  font-size:20px;
+}
+
+.image-post:hover .image-caption{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align:center;
+  font-weight:bold;
+  cursor: pointer;
+}
+
+.image-post img {
+  height:100%;
+  width:100%;
+  object-fit:cover;
+  object-position: center;
+}
+
+.loader-wrap{
+  width:100%;
+  height:30px;  
+}
+.loader-wrap img{
+  margin:0 auto;
+  display:block;
+  padding:10px;
+}
+
+.star {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+  font-style:normal;
+  font-size:20px;
+  font-family: "Arial", sans-serif;
+}
+.star.full { color: gold; }
+.star.half { color: gray; }
+.star.half:after {
+  display: inline-block;
+  color: gold;
+  content: '\2605';
+  position: absolute;
+  margin-left: -20px;
+  width: 10px;
+  overflow: hidden;
+}
+.star.empty { color: gray; }
+
+.wrapper-notification{
+  position:fixed;
+  top:-40px;
+  left:0;
+  width:100%;
+  height:40px;
+  border: 1px solid #ccc;
+  text-align:center;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wrapper-notification.error{
+  background: #8B0000;
+  color:#fff;
+  -webkit-transition: top 1s;
+  transition: top 1s;
+  top:0;
+}
